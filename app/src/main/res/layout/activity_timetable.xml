@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Timetable">
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="325dp"
+            android:layout_height="match_parent"
+            android:layout_weight="60"
+            android:text="   РАСПИСАНИЕ"
+
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            android:textStyle="bold|italic" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="67dp"
+            android:background="#5d76cb"
+            android:insetTop="4dp"
+            android:text="Назад"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/style"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text=""
+            android:textSize="34sp" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text=""
+            android:textSize="33dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Monday"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:background="@color/blue"
+            android:text="Понедельник"
+            android:textAllCaps="true"
+            android:textSize="33dp"
+            android:textStyle="bold|italic" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Tuesday"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:background="@color/blue"
+            android:text="Вторник"
+            android:textSize="33dp"
+            android:textStyle="bold|italic" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Wednesday"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:background="@color/blue"
+            android:text="Среда"
+            android:textSize="33dp"
+            android:textStyle="bold|italic" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Thursday"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:background="@color/blue"
+            android:text="Четверг"
+            android:textSize="33dp"
+            android:textStyle="bold|italic" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Friday"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:background="@color/blue"
+            android:text="Пятница"
+            android:textSize="33dp"
+            android:textStyle="bold|italic" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Saturday"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:background="#5d76cb"
+            android:text="Суббота"
+            android:textSize="33dp"
+            android:textStyle="bold|italic" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Sunday"
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:background="#5d76cb"
+            android:text="Воскресенье"
+            android:textSize="33dp"
+            android:textStyle="bold|italic" />
+
+    </TableRow>
+
+
+</TableLayout>

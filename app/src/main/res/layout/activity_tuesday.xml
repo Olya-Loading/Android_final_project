@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Tuesday">
+    <TableRow>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="   Вторник"
+            android:textSize="30dp"
+            />
+
+
+    </TableRow>
+
+
+    <TableRow android:layout_width="400dp">
+
+        <EditText
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText1"
+            android:hint="Текст..."
+            android:textSize="30dp" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text=""
+            android:id="@+id/text"
+            android:textSize="30dp"
+            />
+    </TableRow>
+    <Button
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:text="Сохранить"
+        />
+
+
+    <Button
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_back"
+        android:text="Назад"
+        />
+
+</TableLayout>

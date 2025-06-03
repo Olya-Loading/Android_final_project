@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity2">
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="279dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="60"
+            android:text="Создать книжку"
+            android:textSize="33dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/back"
+            android:layout_width="156dp"
+            android:layout_height="wrap_content"
+            android:text="Назад"
+            android:background="@color/blue2"
+            android:textSize="20dp" />
+
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="60"
+            android:hint="Название"
+            android:id="@+id/title"/>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:hint="Текст книжки" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/save_book"
+            android:layout_width="215dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/blue2"
+            android:text="Сохранить" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/delete_book"
+            android:layout_width="215dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/blue2"
+            android:text="Удалить" />
+
+    </TableRow>
+
+
+
+
+
+</TableLayout>
