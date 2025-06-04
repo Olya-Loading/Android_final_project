@@ -8,13 +8,14 @@
     android:background="@color/white"
     tools:context=".Thursday">
     <TableRow>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="   Понедельник"
-            android:textSize="30dp"
-            />
+            android:text="ЧЕТВЕРГ"
+            android:textSize="34sp"
+            android:textStyle="bold|italic" />
 
 
     </TableRow>
@@ -30,28 +31,33 @@
             android:textSize="30dp" />
     </TableRow>
     <TableRow>
+
         <TextView
+            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text=""
-            android:id="@+id/text"
-            android:textSize="30dp"
-            />
+            android:textSize="30dp" />
     </TableRow>
-    <Button
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
-        android:text="Сохранить"
-        />
-
-
-    <Button
         android:layout_width="400dp"
         android:layout_height="wrap_content"
+        android:background="#5d76cb"
+        android:text="Сохранить"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_back"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
         android:text="Назад"
-        />
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
 
 </TableLayout>

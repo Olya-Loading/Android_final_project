@@ -24,7 +24,7 @@ public class Tuesday extends AppCompatActivity {
     private Button b1;
     private  Button b2;
     private EditText text;
-    private TextView text2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,15 +39,17 @@ public class Tuesday extends AppCompatActivity {
         b1 = findViewById(R.id.button);
         b2 = findViewById(R.id.button_back);
         text = findViewById(R.id.editText1);
-        text2 = findViewById(R.id.text);
+
 
         try {
-            FileInputStream fis = new FileInputStream(new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS),  "Tuesday.txt"));
-            byte[] text = new byte[(int) fis.available()];
-            fis.read(text);
-            fis.close();
-            String content = new String(text);
-            text2.setText(content);
+            FileInputStream file = new FileInputStream(new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS),  "Tuesday.txt"));
+
+            byte[] text1 = new byte[(int) file.available()];
+            file.read(text1);
+            file.close();
+            String content = new String(text1);
+            text.setText(content);
+
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(this, "Ошибка при чтении заметки", Toast.LENGTH_SHORT).show();
@@ -60,7 +62,7 @@ public class Tuesday extends AppCompatActivity {
                 file.write(text.getText().toString().getBytes());
                 file.close();
                 String content = new String(text.getText().toString());
-                text2.setText(content);
+
                 Toast.makeText(Tuesday.this, "Сохранено", Toast.LENGTH_SHORT).show();
             } catch (IOException e) {
                 Toast.makeText(Tuesday.this, "Ошибка при сохранении заметки", Toast.LENGTH_SHORT).show();

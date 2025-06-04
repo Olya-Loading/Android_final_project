@@ -1,5 +1,7 @@
 package com.example.final_project;
 
+import static java.nio.file.Files.delete;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -18,6 +20,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -41,7 +46,6 @@ public class MainActivity2 extends AppCompatActivity {
         Save_button = findViewById(R.id.save_book);
         back = findViewById(R.id.back);
         delete = findViewById(R.id.delete_book);
-        edit = findViewById(R.id.edit_book);
         sqlHelper = new SQL_helper(this);
 
 
@@ -55,7 +59,6 @@ public class MainActivity2 extends AppCompatActivity {
         if(arguments!=null){
             String book = arguments.get("Book").toString();
             Book_title.setText(book);
-
             try {
                 FileInputStream file = new FileInputStream(new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS),  book +".txt"));
                 byte[] text = new byte[(int) file.available()];
@@ -81,7 +84,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String title = Book_title.getText().toString();
-                File file = new File(title);
+                File file = new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), title + ".txt");
                 file.delete();
                 sqlHelper.deleteBook(title);
                 if(!file.exists() && !file.isDirectory()) {
@@ -89,38 +92,21 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }
         });
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String title = Book_title.getText().toString();
-                String text = Book_text.getText().toString();
-                File file_dir = new File(String.valueOf(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)));
-                if (!title.isEmpty() & !text.isEmpty()) {
-                    try {
 
-                        FileWriter file = new FileWriter(title + ".txt");
-                        file.write(Arrays.toString(text.getBytes()));
-                        file.close();
-                        Toast.makeText(MainActivity2.this, "Сохранено", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity2.this,MainActivity3.class);
-                        startActivity(intent);
-                    } catch (FileNotFoundException e) {
-                        Toast.makeText(MainActivity2.this, "Ошибка при сохранении заметки", Toast.LENGTH_SHORT).show();
-                        throw new RuntimeException(e);
-                    } catch (IOException e) {
-                        Toast.makeText(MainActivity2.this, "Название и содержимое заметки не могут быть пустыми", Toast.LENGTH_SHORT).show();
-                        throw new RuntimeException(e);
-
-                    }
-                }
-            }
-        });
         Save_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String title = Book_title.getText().toString();
                 String text = Book_text.getText().toString();
                 Book book = new Book(title);
+
+                if(arguments!=null){
+                    String book2 = arguments.get("Book").toString();
+                    sqlHelper.deleteBook(book2);
+                    File file3 = new File(getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS), book2 + ".txt");
+                    file3.delete();
+                    sqlHelper.deleteBook(title);
+                                   }
                 sqlHelper.addBook(title);
                 if (!title.isEmpty() & !text.isEmpty()) {
                     try {
